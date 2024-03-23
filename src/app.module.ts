@@ -4,22 +4,22 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [
-    TasksModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '1234',
-      database: 'task-mgt',
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-    AuthModule,
-  ],
-  controllers: [],
-  providers: [],
-  exports: [], 
+    imports: [
+        TasksModule,
+        TypeOrmModule.forRoot({
+            type: 'mysql',
+            host: 'localhost',
+            port: 3306,
+            username: 'root',
+            password: 'joy1234',
+            database: 'task_mgt',
+            autoLoadEntities: true,
+            synchronize: true,
+        }),
+        AuthModule,
+    ],
+    controllers: [],
+    providers: [],
+    exports: [],
 })
-export class AppModule {}
+export class AppModule { }
